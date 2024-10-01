@@ -1,9 +1,7 @@
 <?php
 // Q1 tic-tac問題
 
-
 echo '1から100までのカウントを開始します';
-
 
 for($i = 1; $i <= 100; $i++) {
     
@@ -89,16 +87,10 @@ foreach ($personalInfos as $index => $personalInfo)  {
     
     $ageList = [25, 30, 18];
     //[$index]['age'] = $age
-
-
-    
     foreach ($ageList as $index => $age)  {
         
-        
-        
         $personalInfos[$index]['age'] = $age;
-        
-        //$personalInfos[何番目]の['age']
+         //$personalInfos[何番目]の['age']
         
     }
     
@@ -163,7 +155,13 @@ var_dump($tanaka);
 $yamada ->attend('PHP');
 
 // Q5 定義済みクラス
+//Q5-1
 $date = new DateTime('2021-03-02');//引数が空なら現在時刻
 echo $date->format('Y-m-d');
 
+//Q5-2
+$today = new DateTime('2021-03-02');
+$date = new DateTime('1992-04-25');
+$diff = $today->diff($date); //差を出すときはDateTime::diffを使う
+echo $diff->format("あの日から %a 日経過しました。"); //%aは総日数を表す
 ?>

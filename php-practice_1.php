@@ -9,31 +9,28 @@ echo $massame;
 $x = 5;
 $y = 4;
 
-echo($x * $y);
-($x * $y / 2);
+echo($x * $y),"\n";
+echo($x * $y / 2);
+
 
 // Q3 日付操作
 $date = date ("Y年m月d日 h時i分s秒");
 date_default_timezone_set('Asia/Tokyo');
+$date = date ("Y年m月d日 h時i分s秒");
 $massame = '現在時刻は、' . $date. 'です。';
 echo $massame;
 
 // Q4 条件分岐-1 if文
 $device = 'mac';
-if ($device ='mac'||'windows' ) {
-    echo '使用OSは、macです。';
+if ($device == 'mac'||$device == 'windows' ) {
+    echo '使用OSは、'. $device .'です。';
 } else {
     echo 'どちらでもありません。';
 }
 
 // Q5 条件分岐-2 三項演算子
 $age = 20;
-if ($age >18) {
-    $message = '成人です。';
-} else {
-    $message = '未成年です。';
-}
-
+$message = ($age > 18)? '成人です。' : '未成年です。';
 echo $message;
 
 // Q6 配列
@@ -116,8 +113,6 @@ $prefecter = [
 $prefecter['愛知県'] = '名古屋市';//愛知県と大阪府を追加
 $prefecter['大阪府'] = '大阪市';
 
-
-
 foreach ($prefecter as $key => $value) {
   if ($key == '愛知県' || $key == '大阪府') { //連想配列は一つ一つのkeyをループさせているため「&&」ではなく「||」を使う
       echo "{$key}　は関東地方ではありません。\n"; //if文　〇〇＝〇〇ならば
@@ -189,9 +184,7 @@ function evaluateGrade($grades)
             echo "判定不明です。講師に問い合わせてください。\n";
             break;
         
-    }
-    
-    
+    }   
 
 }
  
