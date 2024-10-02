@@ -3,7 +3,7 @@
 
 echo '1から100までのカウントを開始します';
 
-for($i = 1; $i <= 100; $i++) {
+for($i = 1; $i <= 100; $i++) { //$i++は更新式で$i=1の処理が終わると1+1=2の要素にかわす。
     
     if ($i % 4 == 0 && $i % 5 == 0) {
         echo 'tic-tac';
@@ -156,8 +156,9 @@ $yamada ->attend('PHP');
 
 // Q5 定義済みクラス
 //Q5-1
-$date = new DateTime('2021-03-02');//引数が空なら現在時刻
-echo $date->format('Y-m-d');
+date_default_timezone_set('Asia/Tokyo');
+$date = new DateTime("2024-10-02");//引数が空なら現在時刻
+ echo $date->modify("-1 months")->format("Y-m-d");
 
 //Q5-2
 $today = new DateTime('2021-03-02');

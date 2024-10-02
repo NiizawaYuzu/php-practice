@@ -124,11 +124,11 @@ foreach ($prefecter as $key => $value) {
 } 
 
 // Q10 関数-1
-function hello($name)
+function hello($name)//引数を指定することで渡された関数の内部で、引数の値をもとに処理できる
 {
-    echo $name . "さん、こんにちは。\n";
+    echo $name . "さん、こんにちは。\n";//引数を使う意味：関数の処理は変えずに内容を変えたいときに使う
 }
-;
+
 hello("金谷");
 hello('安藤');
 
@@ -142,7 +142,15 @@ function calcTaxInPrice($price = 1000)
    echo " $price 円の商品の税込価格は $taxInPrice 円です。";
 
 }
+function calcTaxInPrice($price)
+{
+    $taxInPrice = $price * 1.1;
+   return " $price 円の商品の税込価格は $taxInPrice 円です。";
+   //returnは関数の処理を終わらせる
+}
 
+$taxInPrice = calcTaxInPrice(1000);
+echo $taxInPrice;
 // Q12 関数とif文
 function distinguishNum($number)
 {
