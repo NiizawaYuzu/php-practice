@@ -157,12 +157,12 @@ $yamada ->attend('PHP');
 // Q5 定義済みクラス
 //Q5-1
 date_default_timezone_set('Asia/Tokyo');
-$date = new DateTime("2024-10-02");//引数が空なら現在時刻
+$date = new DateTime();//引数が空なら現在時刻
  echo $date->modify("-1 months")->format("Y-m-d");
 
 //Q5-2
-$today = new DateTime('2021-03-02');
+$today = new DateTime('2021-03-02');//DateTimeがクラス名
 $date = new DateTime('1992-04-25');
-$diff = $today->diff($date); //差を出すときはDateTime::diffを使う
-echo $diff->format("あの日から %a 日経過しました。"); //%aは総日数を表す
+// $diff = $today->diff($date); //差を出すときはDateTime::diffを使う
+echo $today->diff($date)->format("あの日から %a 日経過しました。");
 ?>
